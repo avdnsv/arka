@@ -1,0 +1,71 @@
+@import "vue-select/dist/vue-select.css";
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/src/assets/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/src/assets/fonts/OpenSans-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/src/assets/fonts/OpenSans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/src/assets/fonts/OpenSans-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+}
+
+:root {
+  --color-white: white;
+  --color-black: #1b2432;
+  --color-grey: #9f9fad;
+  --color-red: #c84630;
+  --color-green: #99c24d;
+  --color-optional: #534d56;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+
+  /* color-scheme: light dark; */
+  color: var(--color-black);
+  background-color: var(--color-white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+a {
+  color: var(--color-grey);
+}
+
+a svg {
+  vertical-align: middle;
+}

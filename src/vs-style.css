@@ -1,0 +1,73 @@
+:root {
+  /* Search Input */
+  --vs-search-input-color: inherit;
+  --vs-search-input-bg: var(--color-white);
+  --vs-search-input-placeholder-color: inherit;
+
+  /* Font */
+  --vs-font-size: inherit;
+  --vs-line-height: 1.4;
+
+  /* Borders */
+  --vs-border-color: var(--color-grey);
+  --vs-border-width: 1px;
+  --vs-border-style: solid;
+  --vs-border-radius: 8px;
+
+  /* Actions: house the component controls */
+  --vs-actions-padding: 4px 12px 0 12px;
+
+  /* Options */
+  --vs-dropdown-option-color: var(--color-black);
+  --vs-dropdown-option-padding: 4px 16px;
+
+  /* Active State */
+  --vs-dropdown-option--active-bg: var(--color-grey);
+  --vs-dropdown-option--active-color: var(--color-white);
+
+  /* Deselect State */
+  --vs-dropdown-option--deselect-bg: var(--color-red);
+  --vs-dropdown-option--deselect-color: var(--color-white);
+
+  /* Transitions */
+  --vs-transition-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  --vs-transition-duration: 0.3s;
+}
+
+.vs__search:focus {
+  padding-left: 14px;
+  height: 28px;
+}
+
+.vs__clear {
+  display: grid;
+  place-items: center;
+}
+
+.vs---open {
+  line-height: var(--vs-line-height);
+}
+
+.vs__clear > svg,
+.vs__open-indicator {
+  color: var(--color-grey);
+  fill: none;
+  height: 20px;
+  width: 20px;
+}
+
+.vs__selected {
+  padding-left: 11px;
+  height: 28px;
+}
+
+.vs__dropdown-toggle {
+  height: 40px;
+}
+
+.v-select.error {
+  --vs-border-color: var(--color-red);
+  background: url("./assets/images/alert.svg") no-repeat;
+  background-position: center right 36px;
+  background-size: 20px;
+}
