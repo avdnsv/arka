@@ -30,15 +30,15 @@ export default {
   <h1 class="title-advantages">НАШИ ПРЕИМУЩЕСТВА</h1>
   <div class="wrapper-section">
     <div class="container">
-      <img src="../assets/images/003.png" />
+      <img src="../assets/images/003.png" alt="" width="300px" height="auto" />
       <h1 class="title-description">ДОСТУПНЫЙ ИНТЕРФЕЙС</h1>
     </div>
     <div class="container">
-      <img src="../assets/images/002.png" />
+      <img src="../assets/images/002.png" alt="" width="300px" height="auto" />
       <h1 class="title-description">ЭКОНОМИЯ ВРЕМЕНИ ПРИ РАСЧЕТАХ</h1>
     </div>
     <div class="container">
-      <img src="../assets/images/001.png" />
+      <img src="../assets/images/001.png" alt="" width="300px" height="auto" />
       <h1 class="title-description">ДОСТУП ОНЛАЙН С ЛЮБОГО УСТРОЙСТВА</h1>
     </div>
   </div>
@@ -79,9 +79,5 @@ export default {
   text-align: center;
   width: 270px;
   overflow: hidden;
-}
-
-.container img {
-  width: 110%;
 }
 </style>

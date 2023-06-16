@@ -25,9 +25,7 @@ export default {
       © АРКА, 2023. Любое использование либо копирование материалов или подборки
       материалов сайта, элементов дизайна и оформления допускается лишь с
       разрешения правообладателя и только со ссылкой на источник:
-      <a class="footer-block__icon" href="https://www.doarch.site"
-        >www.doarch.site</a
-      >
+      <a class="footer-block__icon" href="https://doarch.site"> doarch.site</a>
     </p>
   </footer>
 </template>
