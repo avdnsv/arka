@@ -4,6 +4,7 @@ import MainFooter from "../components/MainFooter.vue";
 import AdditionalInfo from "../components/AdditionalInfo.vue";
 import ElemSelect from "../components/ElemSelect.vue";
 import ElemInput from "../components/ElemInput.vue";
+import ElemTooltip from "../components/ElemTooltip.vue";
 
 import { PlusCircleIcon } from "@heroicons/vue/24/outline";
 import { XCircleIcon } from "@heroicons/vue/24/outline";
@@ -17,6 +18,7 @@ export default {
     AdditionalInfo,
     ElemInput,
     ElemSelect,
+    ElemTooltip,
     PlusCircleIcon,
     XCircleIcon,
   },
@@ -279,6 +281,8 @@ export default {
       <elem-input
         name="temperature"
         label="РАСЧЕТНАЯ ТЕМПЕРАТУРА ВНУТРЕННЕГО ВОЗДУХА, ℃"
+        tooltip="true"
+        tooltip-text="Температура внутреннего воздуха принимается при расчете ограждающих конструкций групп зданий согласно табл. 1-3 ГОСТ 30494-2011."
         type="number"
         v-model.number="temperature"
         :errors="errors"
@@ -289,6 +293,8 @@ export default {
       <elem-input
         name="humidity"
         label="ВЛАЖНОСТЬ ВНУТРЕННЕГО ВОЗДУХА, %"
+        tooltip="true"
+        tooltip-text="Влажность внутреннего воздуха принимается при расчете ограждающих конструкций групп зданий согласно табл. 1-3 ГОСТ 30494-2011."
         type="number"
         v-model.number="humidity"
         :errors="errors"
@@ -327,7 +333,15 @@ export default {
     </div>
 
     <div class="wrapper-block">
-      <h1 class="title">ОГРАЖДАЮЩАЯ КОНСТРУКЦИЯ</h1>
+      <div class="wrapper-heading-tooltip">
+        <h1 class="title">ОГРАЖДАЮЩАЯ КОНСТРУКЦИЯ</h1>
+        <elem-tooltip
+          title="Ограждающая конструкция описывается послойно в
+        любом порядке. В поле <b>Наименование</b> указывается название материала в
+        произвольной форме. В поле <b><i>δ</i>, мм</b> устанавливается толщина данного
+        материала. В поле <b><i>λ</i>, Вт/(м∙℃)</b> указывается расчетная теплопроводность (А или Б) данного материала."
+        />
+      </div>
       <table class="table">
         <thead>
           <tr>
@@ -402,7 +416,7 @@ export default {
         :errors="errors"
         @select="selectOption"
         name="innerIndex"
-        label="ВНУТРЕННЯЯ ПОВЕРХНОСТЬ ОГРАЖДЕНИЯ"
+        label="ВНУТРЕННЯЯ ПОВЕРХНОСТЬ ОГРАЖДАЮЩЕЙ КОНСТРУКЦИИ"
       />
     </div>
 
@@ -413,7 +427,7 @@ export default {
         :errors="errors"
         @select="selectOption"
         name="outerIndex"
-        label="НАРУЖНАЯ ПОВЕРХНОСТЬ ОГРАЖДЕНИЯ"
+        label="НАРУЖНАЯ ПОВЕРХНОСТЬ ОГРАЖДАЮЩЕЙ КОНСТРУКЦИИ"
       />
     </div>
 
@@ -472,8 +486,23 @@ export default {
   margin: 30px auto 60px;
 }
 
+.title,
+.label {
+  display: block;
+  font-weight: bold;
+  font-size: inherit;
+  color: var(--color-grey);
+  margin: 0 0 8px;
+}
+
 .paragraph {
   margin: 0;
+}
+
+.wrapper-heading-tooltip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .inline {

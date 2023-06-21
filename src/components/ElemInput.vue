@@ -1,10 +1,21 @@
 <script>
+import ElemTooltip from "./ElemTooltip.vue";
+
 export default {
+  components: {
+    ElemTooltip,
+  },
   props: {
     name: {
       type: String,
     },
     label: {
+      type: String,
+    },
+    tooltip: {
+      type: Boolean,
+    },
+    tooltipText: {
       type: String,
     },
     type: {
@@ -30,7 +41,11 @@ export default {
 </script>
 
 <template>
-  <label class="label" v-if="label" :for="name"> {{ label }}</label>
+  <div v-if="tooltip" class="wrapper-heading-tooltip">
+    <label class="label" v-if="label" :for="name"> {{ label }}</label>
+    <elem-tooltip :title="tooltipText" />
+  </div>
+  <label v-else class="label" v-if="label" :for="name"> {{ label }}</label>
   <input
     :class="['input', hasError]"
     :id="name"
