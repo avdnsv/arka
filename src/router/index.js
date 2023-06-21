@@ -2,6 +2,7 @@ import Main from "../views/Main.vue";
 import HeatingCalc from "../views/HeatingCalc.vue";
 import SnowLoads from "../views/SnowLoads.vue";
 import WindLoads from "../views/WindLoads.vue";
+import HowToUse from "../views/HowToUse.vue";
 import PageNotFound from "../views/PageNotFound.vue";
 
 import { createRouter, createWebHistory } from "vue-router";
@@ -26,6 +27,11 @@ const routes = [
     path: "/wind",
     component: WindLoads,
     meta: { title: "Ветровая нагрузка · Арка" },
+  },
+  {
+    path: "/faq",
+    component: HowToUse,
+    meta: { title: "Как пользоваться · Арка" },
   },
   {
     path: "/:pathMatch(.*)*",
